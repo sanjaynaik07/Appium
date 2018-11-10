@@ -88,8 +88,8 @@ public class TestBase {
 	public static void driverinit() {
 		// TODO Auto-generated method stub
 		driver.get("https://www.amazon.in/");
-		/*driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );*/
+		//driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
 	}
 	
 }

@@ -22,6 +22,7 @@ public class TestCase extends TestBase{
 	
 	ExtentTest child1;
 	ExtentTest child2;
+	ExtentTest child3;
 
 //	HomePage h;
 	
@@ -41,7 +42,7 @@ public class TestCase extends TestBase{
 	
 	@Test(priority=0,enabled=true)
 	public void extent(){
-		_test_logger = _extent_report.startTest("Appium Extent  Report");
+		_test_logger = _extent_report.startTest("Test Scenario 1 : Validate Homepage Title ,  Add a product to cart ,  Enter login credentials");
 		
 		
 	
@@ -90,10 +91,36 @@ public class TestCase extends TestBase{
 					driver.findElement(By.xpath("//button[@type='button']")).click();
 					child2.log(LogStatus.PASS, "added to cart susscefully");
 					
+					
 					 			
-					
+				
 		}
-					
+				
+		@Test(priority=3,enabled=true, description="Enter login details")
+		public void login()
+		{
+			child3 = _extent_report.startTest("Enter login details");
+			
+			driver.findElement(By.xpath("//input[@id='ap_email_login']")).sendKeys("8099064073");
+			
+			driver.findElement(By.xpath("(//input[@id='continue'])[2]")).click();
+			driver.findElement(By.xpath("//input[@type='password']")).sendKeys("sanjay");
+			
+			driver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
+			
+			//div[@class='a-container']/h1
+			String s1="Select a delivery address";
+
+			
+			
+			
+String s=driver.findElement(By.xpath("//div[@class='a-container']/h1")).getText();
+
+if(s.equals(s))
+{
+	child3.log(LogStatus.PASS, "Login succesfull");
+		}
+		}
 		
 		
 		@AfterTest
@@ -101,7 +128,7 @@ public class TestCase extends TestBase{
 		{
 		
 			_test_logger
-		    .appendChild(child1).appendChild(child2);
+		    .appendChild(child1).appendChild(child2).appendChild(child3);
 
 			_extent_report.endTest(_test_logger);
 			_extent_report.flush(); 

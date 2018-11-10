@@ -17,10 +17,10 @@
     <documentTitle>ExtentReports 2.0</documentTitle>
     
     <!-- report name - displayed at top-nav -->
-    <reportName>Appium Demo</reportName>
+    <reportName>Appium Report</reportName>
     
     <!-- report headline - displayed at top-nav, after reportHeadline -->
-    <reportHeadline>FIlegps</reportHeadline>
+    <reportHeadline></reportHeadline>
     
     <!-- global date format override -->
     <!-- defaults to yyyy-MM-dd -->
