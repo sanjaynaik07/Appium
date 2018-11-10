@@ -104,7 +104,7 @@ public class TestCase extends TestBase{
 			driver.findElement(By.xpath("//input[@id='ap_email_login']")).sendKeys("8099064073");
 			
 			driver.findElement(By.xpath("(//input[@id='continue'])[2]")).click();
-			driver.findElement(By.xpath("//input[@type='password']")).sendKeys("sanjay");
+			driver.findElement(By.xpath("//input[@id='ap_password']")).sendKeys("sanjay");
 			
 			driver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
 			
