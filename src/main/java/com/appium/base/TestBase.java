@@ -21,36 +21,11 @@ public class TestBase {
 	public static ExtentReports _extent_report;
 	public static ExtentTest _test_logger;
 	
-	//public static WebDriver  driver;
+
 	
 	public  TestBase() 
 	{
-		
-		/*System.setProperty("webdriver.chrome.driver", "C:\\Users\\sdhanavath\\Downloads\\chromedriver.exe");
-		driver=new ChromeDriver();*/
-/*	DesiredCapabilities capabilities1 = new DesiredCapabilities();
-	capabilities1.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-	capabilities1.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1.2");
-	capabilities1.setCapability(MobileCapabilityType.DEVICE_NAME, "Jagadeesh BM");
-	capabilities1.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
-	URL u = null;
-	try {
-		u = new URL("http://127.0.0.1:4723/wd/hub");
-	} catch (MalformedURLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	 driver= new AndroidDriver(u,capabilities1);*/
-	//	2134b16e40017ece
-	 
-	 /*
-	 DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1.0");
-		
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "2134b16e40017ece");
-		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");*/
-		
+	
 		DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "6.0.1");
@@ -65,7 +40,7 @@ public class TestBase {
 			e.printStackTrace();
 		}
 		 driver=new AndroidDriver(u,capabilities);
-		//	driver.get("https://redlion.com");
+		
 		
 }
 	
@@ -88,7 +63,7 @@ public class TestBase {
 	public static void driverinit() {
 		// TODO Auto-generated method stub
 		driver.get("https://www.amazon.in/");
-		//driver.manage().window().maximize();
+	
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
 	}
 	

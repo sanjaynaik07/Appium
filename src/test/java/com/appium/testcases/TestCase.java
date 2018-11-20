@@ -8,13 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.appium.base.TestBase;
-import com.appium.pages.HomePage;
+
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -24,7 +23,6 @@ public class TestCase extends TestBase{
 	ExtentTest child2;
 	ExtentTest child3;
 
-//	HomePage h;
 	
 	TestCase()  {
 		super();
@@ -37,12 +35,12 @@ public class TestCase extends TestBase{
 	
 		driverinit();
 		Extentreports();
-//	 h=new HomePage();
+
 	}
 	
 	@Test(priority=0,enabled=true)
 	public void extent(){
-		_test_logger = _extent_report.startTest("Test Scenario 1 : Validate Homepage Title ,  Add a product to cart ,  Enter login credentials");
+		_test_logger = _extent_report.startTest("Appium Extent Report");
 		
 		
 	
@@ -65,7 +63,7 @@ public class TestCase extends TestBase{
 				 child1.log(LogStatus.PASS, "Page title validated");
 			 }
 			 else
-				 child1.log(LogStatus.FAIL, "Page title validation failed because expected title was : " +ExpTitle +"and actual was :" +Actualtitle );		
+				 child1.log(LogStatus.FAIL, "Page title validation failed because expected title was : " +ExpTitle +"  but actual was :" +Actualtitle );		
 			
 	}
 		
@@ -73,7 +71,7 @@ public class TestCase extends TestBase{
 		public void addcart()
 		{
 			
-			child2 = _extent_report.startTest("Adding to the cart");
+			child2 = _extent_report.startTest("Verify  add to the cart functionality");
 			
 			driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("java 8 books");
 			
@@ -99,7 +97,7 @@ public class TestCase extends TestBase{
 		@Test(priority=3,enabled=true, description="Enter login details")
 		public void login()
 		{
-			child3 = _extent_report.startTest("Enter login details");
+			child3 = _extent_report.startTest("Login validation");
 			
 			driver.findElement(By.xpath("//input[@id='ap_email_login']")).sendKeys("8099064073");
 			
@@ -120,6 +118,10 @@ if(s.equals(s))
 {
 	child3.log(LogStatus.PASS, "Login succesfull");
 		}
+else
+{
+	child3.log(LogStatus.FAIL, "Login unsuccesfull");
+}
 		}
 		
 		
